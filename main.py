@@ -7,6 +7,13 @@ from random import randint
 # Library Initialization
 pygame.init ()
 
+# Music and soud effect config
+pygame.mixer.music.set_volume(0.1)
+background_music = pygame.mixer.music.load ('assets/background music.mp3')
+pygame.mixer_music.play (-1)
+
+point_effect = pygame.mixer.Sound('assets/point.wav')
+
 # Display Size
 size = width, height = 640, 480
 black = 0, 0 ,0
@@ -58,6 +65,7 @@ while True:
         x_obstacle = randint(40, 600)
         y_obstacle = randint(50, 430)
         score += 1
+        point_effect.play()
     # Score position in screen
     screen.blit(score_render, (430,40))
     # Refresh the screen while the primary loop receives new information
